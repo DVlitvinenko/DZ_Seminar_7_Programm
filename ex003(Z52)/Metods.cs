@@ -1,6 +1,6 @@
 public class Metods
 {
-   public static int Input(string msg)
+  public static int Input(string msg)
   {
     Console.WriteLine(msg);
     return Convert.ToInt32(Console.ReadLine());
@@ -36,20 +36,21 @@ public class Metods
       Console.WriteLine();
     }
   }
-public static void AverageAriphmetic(int[,]matrix)
-{
-  int rows = matrix.GetLength(0);
-  int columns = matrix.GetLength(1);
-  Console.WriteLine("Среднее арифметическое каждого столбца: ");
-  for (int i = 0; i < rows; i++)
+  public static void AverageAriphmetic(int[,] matrix)
   {
     double ariphm = 0;
-    for (int j = 0; j < columns; j++)
+    int rows = matrix.GetLength(0);
+    int columns = matrix.GetLength(1);
+    Console.WriteLine("Среднее арифметическое каждого столбца: ");
+    for (int i = 0; i < columns; i++)
     {
-      ariphm += matrix[i,j]; 
+      ariphm = 0;
+      for (int j = 0; j < rows; j++)
+      {
+        ariphm += matrix[j, i];
+      }
+      double result = ariphm / rows;
+      Console.Write($"{result}; ");
     }
-    double result = ariphm/rows;
-    Console.Write($"{result}; ");
   }
-}
 }
